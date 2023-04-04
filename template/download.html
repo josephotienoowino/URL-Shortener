@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Downloader</title>
+</head>
+<body>
+    <h1>YouTube Downloader</h1>
+    <form action="{{ url_for('download') }}" method="post">
+        <label for="url">Enter YouTube video URL:</label>
+        <input type="text" id="url" name="url">
+        <input type="submit" value="Download">
+    </form>
+</body>
+</html>

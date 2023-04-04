@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>URL Shortener</title>
+</head>
+
+<body>
+    <h1>URL Shortener</h1>
+    <form action="{{ url_for('home') }}" method="post">
+        <label for="url">Enter a URL:</label><br>
+        <input type="text" id="url" name="url" size="50"><br>
+        <input type="submit" value="Shorten">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Short URL</title>
+</head>
+
+<body>
+    <h1>Original URL:</h1>
+    <p>{{ original_url }}</p>
+    <h1>Generated Results:</h1>
+    <p><a href="{{ url_for('redirect_to_original_url', short_url=short_url) }}">{{ short_url }}</a></p>
+</body>
+</html>
