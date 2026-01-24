@@ -1,17 +1,75 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>URL Shortener</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background: #667eea;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: #5a67d8;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>URL Shortener</h1>
-    <form action="{{ url_for('home') }}" method="post">
-        <label for="url">Enter a URL:</label><br>
-        <input type="text" id="url" name="url" size="50"><br>
-        <input type="submit" value="Shorten">
-    </form>
-</body>
+    <div class="card">
+        <h1>URL Shortener</h1>
 
+        <form action="{{ url_for('home') }}" method="post">
+            <label for="url">Enter a URL</label>
+            <input type="text" id="url" name="url" placeholder="https://example.com" required>
+            <input type="submit" value="Shorten URL">
+        </form>
+    </div>
+</body>
 </html>

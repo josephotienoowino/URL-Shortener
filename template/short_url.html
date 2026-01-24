@@ -1,14 +1,66 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Short URL</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #43cea2, #185a9d);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            width: 450px;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            word-break: break-all;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background: #43cea2;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        a:hover {
+            background: #36b38c;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Original URL:</h1>
-    <p>{{ original_url }}</p>
-    <h1>Generated Results:</h1>
-    <p><a href="{{ url_for('redirect_to_original_url', short_url=short_url) }}">{{ short_url }}</a></p>
+    <div class="card">
+        <h1>Original URL</h1>
+        <p>{{ original_url }}</p>
+
+        <h1>Short URL</h1>
+        <a href="{{ url_for('redirect_to_original_url', short_url=short_url) }}">
+            {{ short_url }}
+        </a>
+    </div>
 </body>
 </html>
